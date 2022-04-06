@@ -1,0 +1,53 @@
+﻿@page
+@model WebApplication4_Razor.Pages.BookList.CreateModel
+@{
+}
+<h2 class="text-primary">Create New Student</h2>
+<form method="post">
+    <div asp-validation-summary="None" class="text-danger"></div>
+    <div class="table table-bordered">
+        <br />
+        <div class="container">
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Book.Time"></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Book.Time" class="form-control" />
+                </div>
+                <span asp-validation-for="Book.Time" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Book.Date"></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Book.Date" class="form-control" />
+                </div>
+                <span asp-validation-for="Book.Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Book.Availabilitiy"></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Book.Availabilitiy" class="form-control" />
+                </div>
+                <span asp-validation-for="Book.Availabilitiy" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="offset-3">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a asp-page="Index" class="btn btn-info">Back To List</a>
+        </div>
+        <br />
+    </div>
+</form>
+@section scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
