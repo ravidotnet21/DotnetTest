@@ -2,14 +2,12 @@
 @model WebApplication4_Razor.Pages.BookList.IndexModel
 @{ }
 <div class="row">
-    <div class="col-9 border-bottom">
-        <h2 class="text-primary">Student List</h2>
+    <div><h6>Time Left:60 seconds</h6></div>
+    <div class="col-12 border-bottom">
+        <h2 class="text-danger">Claim Your Free Trail Class</h2>
     </div>
-    <div class="col-3">
-        <a asp-page="Upsert" class="btn btn-info">
-            Create New Student
-        </a>
-    </div>
+   <div class="col-9"> <h4>Class Schedule</h4></div>
+   <div class="col-3"> <h4>Free Seats Left:7</h4></div>
 </div>
 @*<div class="col-12 p-2">
         @if (Model.Books.Count() > 0)
@@ -47,7 +45,7 @@
             <p>No Data Found</p>
         }
     </div>*@
-<br />
+
 @*<h2 class="text-info text-capitalize text-center">Or</h2>*@
 <div class="table table-bordered table-striped">
     <table id="tbldata" class="table table-bordered">
@@ -67,6 +65,7 @@
                 <th>@item.Date</th>
                 <th>@item.Time</th>
                 <th>@item.Availabilitiy</th>
+                <th><button asp-action="AddData(@item.Id)" >Book Now</button></th>
             </tr>
 
             }

@@ -34,5 +34,19 @@ namespace WebApplication4_Razor.Controllers
             await _context.SaveChangesAsync();
             return Json(new { success = true, message = "Data Sucessfully Deleted!!" });
         }
+        [HttpPost]
+        public async Task<IActionResult> AddData(int id)
+        {
+            var student = _context.ClassSchedules.Find(id);
+            if (student.Availabilitiy == 3)
+                return View("full");
+            else
+            {
+                student.Availabilitiy += 1;
+                _context.ClassSchedules.Update(student);
+                _context.SaveChanges();
+            }
+            return View();
+        }
     }
 }
